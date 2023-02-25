@@ -1,73 +1,69 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# RESTFUl API com NestJS
+API Restful fieta com o framework <a href="https://nestjs.com">NestJS</a><br>
+### Esta API utiliza: <br>
+<div style="display: inline_block" align="left"><br>
+  <img align="center" height="60" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+  <img align="center" height="60" width="70" src="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg">
+</div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+# Primeiros passos:
+### Primeiramente, você precisa ter o <a href="https://nodejs.org/en/">NodeJS</a> e o <a href="https://www.postman.com/downloads/?utm_source=postman-home">PostMan</a> instalados em sua máquina <br>
+#### Para instalar as dependências necessárias, coloque o seguinte comando:
+```
+npm install
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Iniciando o projeto
+#### Para iniciar, coloque este comando no terminal:
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run start:dev
 ```
+#### Isso irá iniciar o ambiente de desenvolvimento no endereço `http://localhost:3000/usuarios`
 
-## Support
+## Entrando no Postman
+#### Com o postman instalado, siga estes passos:
+### Clique no botão "+" no canto superior para abrir uma request HTTP no Postman
+![Capture001](https://user-images.githubusercontent.com/83819836/221372140-27f037a4-e6e0-43c9-911c-dc6ddcf39255.png)
+### Coloque o tipo de requisição (`GET` por padrão) e coloque a URL `http://localhost:3000/usuarios` ao lado
+### Para enviar a requisição, só clicar no botão "Send"
+![Capture001](https://user-images.githubusercontent.com/83819836/221372268-4de7c259-15bf-402a-bf53-11f093243d53.png)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# Como usar
 
-## Stay in touch
+## Requisição POST
+### Mude o tipo de requisição para `POST` antes da URL
+### Mude a aba para `body`, depois coloque a opção `raw` e mude para `JSON` na última opção, em azul
+![Capture001](https://user-images.githubusercontent.com/83819836/221372571-8a33e337-10e4-457e-a876-d7a5cc95c75c.png)
+### No BODY, coloque um Objeto JSON, no formato
+```
+{
+  "nome": "nome",
+  "email": "email@email.com"
+  "senha": "suaSenha123"
+}
+```
+### E aperte em "Send" Para enviar a requisição
+### No Body, irá aparecer o `id` referente a este usuário
+![image](https://user-images.githubusercontent.com/83819836/221372634-b4876c38-0adb-4548-85e6-d991c8147ab4.png)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Requisição GET
+### Coloque o tipo `GET` na requisição e clique em "Send"
+### Isso irá mostrar todos os usuários registrados
+![image](https://user-images.githubusercontent.com/83819836/221372721-8cfbe2f7-ccc5-4c96-a9c3-c0bb36140d32.png)
 
-## License
+## Requisição PUT (Atualizar)
+### Mude o tipo de requisição para `PUT` antes da URL
+### Coloque, no final da URL, o `/{id}` com o id do usuario que você quer editar
+### Mude a aba para `body`, depois coloque a opção `raw` e mude para `JSON` na última opção, em azul
+### No `Body`, coloque um objeto JSON e mude o valor que preferir
+![Capture001](https://user-images.githubusercontent.com/83819836/221372925-4506a319-730b-405a-9ada-95cfb9e9fe6b.png)
 
-Nest is [MIT licensed](LICENSE).
+## Requisição DELETE
+### Mude o tipo de requisição para `DELETE` antes da URL
+### Coloque na URL um `/{id}` e clique no botão SEND para deletar o item com o referido ID
+![Capture001](https://user-images.githubusercontent.com/83819836/221372978-8ec8e25a-9932-4f5c-99fd-7853139dfb99.png)
+
+# Conclusão
+#### Este projeto foi feito junto ao curso da <a href="https://www.alura.com.br">Alura</a> Sobre NestJS
+#### Obrigado por ler até aqui, fique a vontade para mandar um Pull Request e mudar alguma coisa
+#### Se quiser saber mais sobre mim, aqui está o <a href="https://luciano655dev.netlify.app">meu Portfolio</a>
